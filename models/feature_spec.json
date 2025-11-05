@@ -29,6 +29,6 @@
   },
   "rolling": {
     "window_minutes": 60,
-    "min_periods": 30
+    "min_periods": 5
   }
 }
