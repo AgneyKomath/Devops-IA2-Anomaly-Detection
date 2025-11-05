@@ -28,7 +28,7 @@ context_df = None
 if os.path.exists(CTX_CSV):
     context_df = pd.read_csv(CTX_CSV, parse_dates=["minute"])
 
-st.title("NASA Log Anomaly Detector")
+st.title("Server Log Anomaly Detector")
 
 push_to_repo = st.checkbox("Also commit uploaded logs to GitHub (triggers retraining)")
 uploaded = st.file_uploader("Upload access log (.log/.txt/.zip)", type=["log","txt","zip"])
