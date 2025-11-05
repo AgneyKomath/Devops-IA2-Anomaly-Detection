@@ -1,0 +1,10 @@
+apiuser.example.com - - [24/Aug/1995:12:10:01 -0400] "GET /api/status HTTP/1.0" 500 0
+apiuser.example.com - - [24/Aug/1995:12:10:05 -0400] "GET /api/status HTTP/1.0" 500 0
+apiuser.example.com - - [24/Aug/1995:12:10:08 -0400] "GET /api/status HTTP/1.0" 500 0
+client10.example.com - - [24/Aug/1995:12:10:12 -0400] "GET / HTTP/1.0" 200 7280
+apiuser.example.com - - [24/Aug/1995:12:10:15 -0400] "GET /api/status HTTP/1.0" 500 0
+apiuser.example.com - - [24/Aug/1995:12:10:20 -0400] "GET /api/status HTTP/1.0" 500 0
+client11.example.com - - [24/Aug/1995:12:10:22 -0400] "GET /images/ksclogosmall.gif HTTP/1.0" 200 3635
+apiuser.example.com - - [24/Aug/1995:12:10:30 -0400] "GET /api/status HTTP/1.0" 500 0
+client12.example.com - - [24/Aug/1995:12:10:35 -0400] "GET /history/apollo/apollo-16.html HTTP/1.0" 200 2743
+apiuser.example.com - - [24/Aug/1995:12:10:40 -0400] "GET /api/status HTTP/1.0" 500 0

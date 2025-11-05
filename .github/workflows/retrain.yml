@@ -1,0 +1,45 @@
+name: retrain
+on:
+  push:
+    paths: ["data/raw/**"]
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write    # needed to commit new models/
+    concurrency:
+      group: retrain
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Train model
+        env:
+          TRAIN_WINDOW_DAYS: "45"
+          CONTAMINATION: "0.02"
+          ROLLING_WINDOW_MINUTES: "60"
+          ROLL_MIN_PERIODS: "5"
+          RANDOM_STATE: "42"
+          ARCHIVE_FRAC: "0.1"
+          USE_REAL_NOW: "0"
+        run: python training/train.py
+
+      - name: Commit updated models
+        run: |
+          git config user.name "ci-bot"
+          git config user.email "ci@example.com"
+          git add models/*
+          git commit -m "ci: update models from retrain" || echo "no changes"
+          git push

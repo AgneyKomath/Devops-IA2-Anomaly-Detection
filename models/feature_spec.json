@@ -1,0 +1,34 @@
+{
+  "features": [
+    "req_count",
+    "unique_hosts",
+    "status_2xx",
+    "status_3xx",
+    "status_4xx",
+    "status_5xx",
+    "error_rate",
+    "bytes_sum",
+    "bytes_mean",
+    "method_GET",
+    "method_POST",
+    "method_HEAD",
+    "path_depth_mean",
+    "resource_entropy",
+    "host_entropy",
+    "static_ratio",
+    "robots_ratio",
+    "req_count_ratio",
+    "error_rate_ratio",
+    "req_z",
+    "err_z"
+  ],
+  "post_rules": {
+    "min_traffic": 10,
+    "high_error_threshold": 0.2,
+    "five_xx_priority": 3
+  },
+  "rolling": {
+    "window_minutes": 60,
+    "min_periods": 30
+  }
+}
