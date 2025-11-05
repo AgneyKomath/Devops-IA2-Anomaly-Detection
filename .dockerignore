@@ -1,0 +1,10 @@
+.git
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.sqlite
+*.log
+.env
+data/raw/*
